@@ -45,6 +45,7 @@ Users should be able to:
 - [LeafletJS](https://leafletjs.com/) - Mobile-friendly interactive maps
 - [IPify API](https://geo.ipify.org/) - IP Geolocation API
 
+
 ### Setup and Usage
 
 1.  Clone or download the repository.

@@ -1,7 +1,6 @@
-
 const apiKey = "at_GgqxZe2xkILn9TzK2UROhfERsrDWR";
 
-// DOM 
+// DOM
 const ipEl = document.getElementById("ip-address");
 const locationEl = document.getElementById("location");
 const timezoneEl = document.getElementById("timezone");
@@ -11,15 +10,13 @@ const searchInput = document.getElementById("search-input");
 
 // Initialize map
 let map = L.map("map", {
-  zoomControl: false, 
+  zoomControl: false,
 });
-
 
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   attribution:
     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 }).addTo(map);
-
 
 const markerIcon = L.icon({
   iconUrl: "./images/icon-location.svg",
@@ -39,14 +36,12 @@ function updateMap(lat, lng) {
   marker = L.marker([lat, lng], { icon: markerIcon }).addTo(map);
 }
 
-
 function updateInfo(data) {
   ipEl.textContent = data.ip;
   locationEl.textContent = `${data.location.city}, ${data.location.region} ${data.location.postalCode}`;
   timezoneEl.textContent = `UTC ${data.location.timezone}`;
   ispEl.textContent = data.isp;
 }
-
 
 async function getIPData(ipOrDomain = "") {
   let url = `https://geo.ipify.org/api/v2/country,city?apiKey=${apiKey}`;
@@ -81,7 +76,6 @@ async function getIPData(ipOrDomain = "") {
   }
 }
 
-
 // User search input Event listener for api
 searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -93,5 +87,5 @@ searchForm.addEventListener("submit", (e) => {
 
 // Fetch current user IP address at initial
 document.addEventListener("DOMContentLoaded", () => {
-  getIPData(); 
+  getIPData();
 });
