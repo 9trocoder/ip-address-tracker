@@ -1,0 +1,163 @@
+:root {
+  --very-dark-gray: hsl(0, 0%, 17%);
+  --dark-gray: hsl(0, 0%, 59%);
+  --bg-color: hsl(228, 45%, 44%); 
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.header {
+  background-color: var(--bg-color);
+  background-image: url("./images/pattern-bg-desktop.png");
+  background-size: cover;
+  background-position: center;
+  height: 280px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1000;
+}
+
+.title {
+  color: white;
+  font-weight: 500;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+
+.search-bar {
+  display: flex;
+  width: 100%;
+  max-width: 555px;
+  margin-bottom: 3rem;
+}
+
+#search-input {
+  flex: 1;
+  padding: 1.1rem 1.5rem;
+  font-size: 18px;
+  border: none;
+  border-radius: 15px 0 0 15px;
+  outline: none;
+  cursor: pointer;
+}
+
+.search-btn {
+  background-color: black;
+  border: none;
+  padding: 0 1.5rem;
+  border-radius: 0 15px 15px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-btn:hover {
+  background-color: var(--very-dark-gray);
+}
+
+
+.info-card {
+  background-color: white;
+  border-radius: 15px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1110px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  bottom: -80px; 
+  z-index: 1001;
+}
+
+.info-item {
+  flex: 1;
+  padding: 0 2rem;
+  border-right: 1px solid var(--dark-gray);
+}
+
+.info-item:last-child {
+  border-right: none;
+}
+
+.label {
+  display: block;
+  color: var(--dark-gray);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.8rem;
+}
+
+.value {
+  color: var(--very-dark-gray);
+  font-size: 1.6rem;
+  font-weight: 500;
+  word-break: break-word;
+}
+
+#map {
+  flex: 1;
+  width: 100%;
+  z-index: 1;
+}
+
+.attribution {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 1002;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+
+@media (max-width: 768px) {
+  .header {
+    background-image: url("./images/pattern-bg-mobile.png");
+    height: 300px;
+  }
+
+  .info-card {
+    flex-direction: column;
+    text-align: center;
+    bottom: -180px;
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+
+  .info-item {
+    border-right: none;
+    margin-bottom: 1.5rem;
+    padding: 0;
+  }
+
+  .info-item:last-child {
+    margin-bottom: 0;
+  }
+
+  .value {
+    font-size: 1.25rem;
+  }
+
+  #map {
+    margin-top: 100px; 
+  }
+}
